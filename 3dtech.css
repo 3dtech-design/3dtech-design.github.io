@@ -225,6 +225,7 @@ a.col {
   max-width: 100%;
   height: auto;
 }
+/* MEDIA QUERIES */
 @media (min-width: 992px) {
   .vertical_align {
     display: flex;
@@ -242,5 +243,18 @@ a.col {
     display: flex;
     align-items: center;
     margin: auto;
+  }
+  .carousel {
+    height: 400px;
+  }
+  .carousel .item {
+    height: 400px;
+    background-color: blue;
+  }
+  .carousel h1 {
+    font-size: 91px;
+  }
+  .carousel p.descripcion {
+    font-size: 41px;
   }
 }
