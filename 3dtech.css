@@ -226,7 +226,7 @@ a.col {
   height: auto;
 }
 /* MEDIA QUERIES */
-@media (min-width: 992px) {
+@media (min-width: 792px) {
   .vertical_align {
     display: flex;
     align-items: center;
