@@ -1,4 +1,5 @@
 /*Home*/
+/* perico palotes*/
 .thumbnail > img,
 .thumbnail a > img,
 .carousel-inner > .item > img,
@@ -225,7 +226,7 @@ a.col {
   height: auto;
 }
 /* MEDIA QUERIES */
-@media (min-width: 792px) {
+@media (min-width: 992px) {
   .vertical_align {
     display: flex;
     align-items: center;
