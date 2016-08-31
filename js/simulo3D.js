@@ -1,26 +1,30 @@
 
-/* Mejorar el comportamiento de los enlaces internos, colapsar el menú*/
+
 $(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 400);
-		/* Colapsar el menú*/
-		$('.active,.dropdown,.open').removeClass('open');
-		$('#navbar').removeClass('in');
-        return false;
-      }  
-    }
-  });
+  
 });
 
 $(document).ready(function(){
-		/* Animar los carruseles*/
-      $('.carousel').slick({
+	/* Mejorar el comportamiento de los enlaces internos, colapsar el menú*/
+	$('a[href*="#"]:not([href="#"])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		  var target = $(this.hash);
+		  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		  if (target.length) {
+			$('html, body').animate({
+			  scrollTop: target.offset().top
+			}, 400);
+			/* Colapsar el menú*/
+			$('.active,.dropdown,.open').removeClass('open');
+			$('#navbar').removeClass('in');
+			return false;
+		  }  
+		}
+	});
+	
+	/* Animar los carruseles*/
+		
+      $('.carousel_featurette').slick({
         autoplay: true,
 		autoplaySpeed: 1000,
 		dots: true,
@@ -61,6 +65,6 @@ $(document).ready(function(){
 	}
 
 	$window.on('scroll resize', check_if_in_view);
-	$window.trigger('scroll');
+	//$window.trigger('scroll');
 	
 });

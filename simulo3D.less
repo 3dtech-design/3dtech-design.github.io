@@ -23,10 +23,10 @@ body {
 	color:white;
 }
 
-.carousel {
-	height: 400px;
+.carousel{
+	height: 280px;
 	.item {
-		height: 400px;
+		height: 280px;
 		background-color: blue;
 	}
 }
@@ -47,18 +47,8 @@ body {
 	min-height: 100%;
 	width: auto;
 	height: auto;
-
 	background-size: cover;
 	overflow: hidden;
-}
-#serv{
-	background-image:url(./img/guia.jpg);
-}
-#form{
-	background-image:url(./img/guia_columna.jpg);
-}
-#somos{
-	background-image:url(./img/mandibula.jpg);
 }
 
 .marketing .col-lg-4 p{
@@ -66,6 +56,40 @@ body {
 }
 
 /*Columnas*/
+.comentario{
+	.text-center;
+	margin-bottom: 100px;
+}
+
+.img-circle{
+	margin: auto;
+	width:280px;
+	height:280px;
+	box-shadow: inset 0 0 0 2px rgba(40,96,144,0.6);
+	transition:all 0.2s ease-in-out;
+	overflow:hidden;
+	border-radius: 50%;
+	background-color: #63626A; /*color de fondo de las fotos estándar*/
+	> div{
+		transition:all 0.8s ease-in-out;
+		border-radius: 50%;
+	}
+}
+
+#serv{
+	background-image:url(./img/guia_columna.jpg);	
+	width:280px;
+	height:280px;	
+	background-size: 180% 260%;	
+	background-position:left top;
+}
+#form{
+	background-image:url(./img/guia_columna.jpg);
+}
+#somos{
+	background-image:url(./img/planeacion_quirurgica_tibia.jpg);
+}
+
 a.col{
 	text-decoration: none;
 }
@@ -82,8 +106,14 @@ a.col{
 		opacity: 1;
 		transform: translateX(0px);
 	}
-	&:hover  .img-circle{
+	&:hover .img-circle{
 		box-shadow: inset 0 0 0 12px rgba(40,96,144,0.2);
+		#serv{
+			box-shadow: inset 0 0 0 12px rgba(40,96,144,0.2);
+			background-size: 100% 150%;	
+			background-position: left top;
+			transform: rotate(10deg)
+		}
 	}
 }
 .titulo::before,
@@ -103,15 +133,6 @@ a.col{
 	margin-left: 10px;
 	content: ']';
 	transform: translateX(-20px);
-}
-
-.img-circle{
-	margin: auto;
-	width:280px;
-	height:280px;
-	background-position: center;
-	box-shadow: inset 0 0 0 2px rgba(40,96,144,0.6);
-	transition:all 0.2s ease-in-out
 }
 
 /*Section*/
@@ -141,6 +162,9 @@ a.col{
 	margin-top: 40px;
 	margin-bottom: 40px;
 }
+.carousel_featurette {
+	height: 330px;
+}
 .img_featurette{
 	max-height:100%;
 }
@@ -155,11 +179,12 @@ a.col{
 		.img-thumbnail;
 	}
 }
-.carousel div{
-}
+
 
 
 /* MEDIA QUERIES */
+
+/* Imagenes 480x320 */
 
 @media (min-width: 992px){
 	.vertical_align {
@@ -169,7 +194,7 @@ a.col{
 	.visual_featurette{
 	    margin-top: 60px;
 		> div{
-			height:380px;
+			height:330px;
 		}
 		> div img, div video{
 			.img_featurette;
@@ -182,7 +207,7 @@ a.col{
 		height: 400px;
 		.item {
 			height: 400px;
-			background-color: blue;
+			background-color: white;
 		}
 		h1{
 			font-size:91px;
@@ -191,4 +216,5 @@ a.col{
 			font-size:41px;
 		}
 	}
+	
 }
