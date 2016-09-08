@@ -29,7 +29,9 @@ $(document).ready(function(){
 		autoplaySpeed: 1000,
 		dots: true,
         infinite: true,
-		fade: true
+		fade: true,
+		lazyLoad: 'ondemand',
+		lazyLoadBuffer: 0
       });
 	  
 	 
