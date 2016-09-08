@@ -26,7 +26,7 @@ $(document).ready(function(){
 		
       $('.carousel_featurette').slick({
         autoplay: true,
-		autoplaySpeed: 1000,
+		autoplaySpeed: 4500,
 		dots: true,
         infinite: true,
 		fade: true,

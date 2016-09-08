@@ -137,9 +137,8 @@ body {
   background-color: #63626A;
   /*color de fondo de las fotos estándar*/
 }
-.img-circle > div {
-  transition: all 0.8s ease-in-out;
-  border-radius: 50%;
+figcaption {
+  height: 3em;
 }
 #serv {
   background-image: url(img/guia_columna.jpg);
@@ -217,10 +216,6 @@ a.col {
   width: 200px;
   height: 200px;
 }
-.img_circle_header > div {
-  transition: all 0.8s ease-in-out;
-  border-radius: 50%;
-}
 .featurette {
   transition: transform 0.6s ease-in-out;
 }
@@ -264,6 +259,9 @@ a.col {
   display: inline-block;
   max-width: 100%;
   height: auto;
+}
+.slick-dots {
+  bottom: -40px;
 }
 /* MEDIA QUERIES */
 /* Imagenes 480x320 */
