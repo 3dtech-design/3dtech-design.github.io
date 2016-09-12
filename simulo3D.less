@@ -189,8 +189,23 @@ a.col{
 	}
 }
 
+/* Los botones se desplazan hacia abajo en dispositibvos pequeños*/
 .slick-dots {
   bottom: -40px; 
+}
+@media (max-width: 450px){
+	.slick-dots {
+		bottom: 0px; 
+	}
+	.featurette-divider {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+}
+@media (max-width: 380px){
+	.slick-dots {
+		bottom: 30px; 
+	}
 }
 
 /* MEDIA QUERIES */

@@ -31,7 +31,8 @@ $(document).ready(function(){
         infinite: true,
 		fade: true,
 		lazyLoad: 'ondemand',
-		lazyLoadBuffer: 0
+		lazyLoadBuffer: 0,
+		mobileFirst: true
       });
 	  
 	 
