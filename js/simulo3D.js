@@ -1,10 +1,6 @@
 
-
-$(function() {
-  
-});
-
 $(document).ready(function(){
+	
 	/* Mejorar el comportamiento de los enlaces internos, colapsar el menú*/
 	$('a[href*="#"]:not([href="#"])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -35,6 +31,11 @@ $(document).ready(function(){
 		mobileFirst: true
       });
 	  
+	 /* Carrusel a pantalla completa*/
+	 
+	 // Botón agrandar
+	 $('.carousel_featurette figure').append("<button type='button' class='agrandar'></button>");
+	 botones = $('button.agrandar');
 	 
 	/****Animaciones de scroll****/
 		
