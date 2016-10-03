@@ -30,12 +30,51 @@ $(document).ready(function(){
 		lazyLoadBuffer: 0,
 		mobileFirst: true
       });
-	  
+	
 	 /* Carrusel a pantalla completa*/
 	 
 	 // Botón agrandar
-	 $('.carousel_featurette figure').append("<button type='button' class='agrandar'></button>");
+	 $('.carousel_featurette figure ').append("<button type='button' class='agrandar'><span class='glyphicon glyphicon-fullscreen'></span></button>");
 	 botones = $('button.agrandar');
+	 botones.click(function(){
+		 //alert('Hola!' + ' Indice: ' + $(this).parent().attr('data-slick-index'));
+		 $(document.body).append("<div class='pantalla_completa row'></div>");
+		 
+		indice = $(this).parent().attr('data-slick-index');		
+		var carrusel = $(this).parent().parent();
+		var figures = carrusel.children();
+		var captions = figures.find('figcaption');
+		var imagenesSrc =  Array(figures.length);
+		var imagenes = figures.find('img').each(function(index){imagenesSrc [index] = $(this).attr('src') || $(this).attr('data-lazy');});	
+		var newFigures =  Array(figures.length);	
+		for (var i=0; i<figures.length;i++){
+			newFigure  = document.createElement('figure');		
+			img = document.createElement('img');
+			$(img).attr('data-lazy', imagenesSrc[i]);
+			$(newFigure).append(img);
+			$(newFigure).append(captions[i]);
+			newFigures[i] = newFigure;
+		}
+		$('.pantalla_completa').append(newFigures);			
+		$('.pantalla_completa').slick({
+			initialSlide: indice,
+			autoplay: true,
+			autoplaySpeed: 4500,
+			dots: true,
+			infinite: true,
+			fade: true,
+			lazyLoad: 'progressive',
+			lazyLoadBuffer: 2,
+			mobileFirst: true
+		});
+		
+		$('.pantalla_completa').append("<button type='button' class='cerrar'><span class='glyphicon glyphicon-remove-circle'></span></button>");
+		
+		$('button.cerrar').click(function(){
+				$('.pantalla_completa').slick('unslick');
+				$('.pantalla_completa').remove();
+		});
+	});
 	 
 	/****Animaciones de scroll****/
 		

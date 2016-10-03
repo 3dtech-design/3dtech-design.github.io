@@ -129,17 +129,17 @@ body {
 a.col {
   text-decoration: none;
 }
-.col-lg-6 {
+.contenido_index {
   /* Transiciones*/
 }
-.col-lg-6 .titulo {
+.contenido_index .titulo {
   text-align: center;
 }
-.col-lg-6 p {
+.contenido_index p {
   color: #4B4E4A;
   font-size: 150%;
 }
-.col-lg-6 .img-circle {
+.contenido_index .img-circle {
   margin: auto;
   width: 280px;
   height: 280px;
@@ -149,41 +149,41 @@ a.col {
   background-color: #63626A;
   /*color de fondo de las fotos estándar*/
 }
-.col-lg-6 .img-circle div {
+.contenido_index .img-circle div {
   background-repeat: no-repeat;
   border-radius: 50%;
   width: 280px;
   height: 280px;
 }
-.col-lg-6 .img-circle div#serv {
+.contenido_index .img-circle div#serv {
   background-image: url(img/guia_columna.jpg);
   background-size: 180% 260%;
   background-position: left top;
   transition: all 0.8s ease-in-out;
 }
-.col-lg-6 .img-circle div#somos {
+.contenido_index .img-circle div#somos {
   background-image: url(img/planeacion_quirurgica_tibia.jpg);
   background-size: 130% 180%;
   background-position: center 10%;
   transition: all 0.4s ease-in-out;
 }
-.col-lg-6:hover .img-circle div {
+.contenido_index:hover .img-circle div {
   box-shadow: inset 0 0 0 12px rgba(40, 96, 144, 0.2);
 }
-.col-lg-6:hover .img-circle div#serv {
+.contenido_index:hover .img-circle div#serv {
   background-size: 100% 150%;
   background-position: left top;
   transform: rotate(5deg);
 }
-.col-lg-6:hover .img-circle div#somos {
+.contenido_index:hover .img-circle div#somos {
   background-size: 100% 140%;
   background-position: center 20%;
 }
-.col-lg-6:hover .titulo::before {
+.contenido_index:hover .titulo::before {
   opacity: 1;
   transform: translateX(0px);
 }
-.col-lg-6:hover .titulo::after {
+.contenido_index:hover .titulo::after {
   opacity: 1;
   transform: translateX(0px);
 }
@@ -206,12 +206,21 @@ a.col {
 .featurette-divider {
   margin: 5% 0;
 }
-/*Sección*/
+/*Secciones*/
+.margin-top-180 {
+  margin-top: 180px;
+}
 .img_circle_header {
   border-radius: 50%;
-  margin-top: 180px;
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 280px;
+  box-shadow: inset 0 0 0 2px rgba(40, 96, 144, 0.6);
+  margin: auto;
+}
+.img_circle_header#serv {
+  background-image: url(img/guia_columna.jpg);
+  background-size: 180% 260%;
+  background-position: left top;
 }
 .featurette {
   transition: transform 0.6s ease-in-out;
@@ -231,12 +240,14 @@ a.col {
 .carousel_featurette {
   height: 330px;
 }
-.carousel_featurette :hover .agrandar {
-  height: 40px;
-  width: 40px;
+.carousel_featurette :hover .agrandar span {
+  font-size: 2em;
 }
 .img_featurette {
   max-height: 100%;
+}
+.slick-dots {
+  bottom: auto;
 }
 .visual_featurette > div {
   overflow: hidden;
@@ -257,8 +268,8 @@ a.col {
   max-width: 100%;
   height: auto;
 }
+/* Carrusel pantalla completa*/
 button.agrandar {
-  background-image: url('img/expand-icon_2.png');
   background-size: 100%;
   position: absolute;
   top: 5%;
@@ -269,11 +280,52 @@ button.agrandar {
   border: 0;
   width: 30px;
   background-color: transparent;
+}
+button.agrandar span {
+  color: white;
   transition: all 0.2s ease-in-out;
 }
-/* Los botones no admiten bien un figcaption bajo figures*/
-.slick-dots {
-  bottom: auto;
+button.cerrar {
+  background-size: 100%;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 30px;
+  background-color: transparent;
+}
+button.cerrar span {
+  font-size: 3em;
+  color: #C1C1C1;
+  transition: all 0.2s ease-in-out;
+}
+button.cerrar span :hover {
+  font-size: 3.2em;
+  color: white;
+}
+div.pantalla_completa {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1999;
+}
+div.pantalla_completa figure {
+  width: 100%;
+}
+div.pantalla_completa figure figcaption {
+  text-align: center;
+  font-size: 1.5em;
+}
+div.pantalla_completa figure img {
+  margin: auto;
+  margin-top: 2%;
+  width: 60%;
 }
 /* MEDIA QUERIES */
 /* Imagenes 480x320 */

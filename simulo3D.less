@@ -62,7 +62,7 @@ a.col{
 	text-decoration: none;
 }
 
-.col-lg-6 {
+.contenido_index {
 	.titulo{
 		text-align: center;
 	}
@@ -122,6 +122,7 @@ a.col{
 		transform: translateX(0px);
 	}
 }
+
 .titulo::before,
 .titulo::after {
 	display: inline-block;
@@ -145,12 +146,22 @@ a.col{
     margin: 5% 0;
 }
 
-/*Sección*/
+/*Secciones*/
+
+.margin-top-180{
+		margin-top:180px;
+}
 .img_circle_header{
 	.img-circle;
-	margin-top:180px;
-	width:200px;
-	height:200px;
+	width:280px;
+	height:280px;
+	box-shadow: inset 0 0 0 2px rgba(40,96,144,0.6);
+	margin: auto;
+	&#serv{
+		background-image:url(./img/guia_columna.jpg);	
+		background-size: 180% 260%;	
+		background-position:left top;
+	}
 }
 .featurette{
 	transition: transform 0.6s ease-in-out;
@@ -171,15 +182,17 @@ a.col{
 
 .carousel_featurette {
 	height: 330px;
-	:hover .agrandar{
-		height: 40px;
-		width: 40px;
+	:hover .agrandar span{
+		font-size:2em;
 	}
 }
 .img_featurette{
 	max-height:100%;
 }
 
+.slick-dots { // Los botones no admiten bien un figcaption bajo figures
+  bottom: auto; 
+}
 .visual_featurette{
 	> div{
 		overflow: hidden;
@@ -191,8 +204,9 @@ a.col{
 	}
 }
 
+/* Carrusel pantalla completa*/
+
 button.agrandar{
-	background-image: url('./img/expand-icon_2.png');
 	background-size: 100%;
 	position:absolute; 
 	top:5%; 
@@ -203,14 +217,53 @@ button.agrandar{
 	border:0;
     width: 30px;
 	background-color: transparent;
-	transition: all 0.2s ease-in-out;
+	span{
+		color:white;
+		transition: all 0.2s ease-in-out;
+	}
 }
-
-/* Los botones no admiten bien un figcaption bajo figures*/
-.slick-dots {
-  bottom: auto; 
+button.cerrar{
+	background-size: 100%;
+	position:absolute; 
+	top:5%; 
+	right:5%;
+	height: 30px;
+    padding: 0;
+    margin: 0;
+	border:0;
+    width: 30px;
+	background-color: transparent;
+	span{
+		font-size:3em;
+		color:#C1C1C1;
+		transition: all 0.2s ease-in-out;
+		:hover {
+			font-size:3.2em;
+			color:white;
+		}
+	}
 }
-
+div.pantalla_completa{
+	position: fixed;
+	top:0;
+	height:100%;
+	min-height:100%;
+	width:100%;
+	background: rgba(0,0,0,.95);
+	z-index: 1999;
+	figure {
+		.col-xs-12;
+		figcaption{
+			text-align:center;
+			font-size:1.5em;
+		}
+		img{
+			margin: auto;
+			margin-top: 2%;
+			width: 60%;
+		}
+	}
+}
 /* MEDIA QUERIES */
 
 /* Imagenes 480x320 */
