@@ -64,7 +64,7 @@ $(document).ready(function(){
 			infinite: true,
 			fade: true,
 			lazyLoad: 'progressive',
-			lazyLoadBuffer: 2,
+			lazyLoadBuffer: 0,
 			mobileFirst: true
 		});
 		
