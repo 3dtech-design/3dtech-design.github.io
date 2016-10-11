@@ -34,6 +34,7 @@ $(document).ready(function(){
 	 /* Carrusel a pantalla completa*/
 	 
 	 // Botón agrandar
+	 /**
 	 $('.carousel_featurette figure ').append("<button type='button' class='agrandar'><span class='glyphicon glyphicon-fullscreen'></span></button>");
 	 botones = $('button.agrandar');
 	 botones.click(function(){
@@ -50,7 +51,8 @@ $(document).ready(function(){
 		for (var i=0; i<figures.length;i++){
 			newFigure  = document.createElement('figure');		
 			img = document.createElement('img');
-			$(img).attr('data-lazy', imagenesSrc[i]);
+			//$(img).attr('data-lazy', imagenesSrc[i]);
+			$(img).attr('data-lazy', imagenesSrc[i].substr(0, imagenesSrc[i].lastIndexOf("/")) + "/1440/" + imagenesSrc[i].substr(imagenesSrc[i].lastIndexOf("/") + 1));
 			$(newFigure).append(img);
 			$(newFigure).append(captions[i]);
 			newFigures[i] = newFigure;
@@ -75,11 +77,13 @@ $(document).ready(function(){
 				$('.pantalla_completa').remove();
 		});
 	});
+	 **/
+	 
 	 
 	/****Animaciones de scroll****/
 		
 	/* Asignamos las clases correspondientes a las animaciones de lado derecho e izquierdo*/
-	
+	/*
 	$("div.marketing div.featurette:nth-of-type(odd) > div:nth-child(1),div.marketing div.featurette:nth-of-type(even) > div:nth-child(2)").addClass('revealOnScroll fadeInRight');
 	$('div.marketing div.featurette:nth-of-type(odd) > div:nth-child(2),div.marketing div.featurette:nth-of-type(even) > div:nth-child(1)').addClass('revealOnScroll fadeInLeft');
 	
@@ -109,5 +113,18 @@ $(document).ready(function(){
 
 	$window.on('scroll resize', check_if_in_view);
 	//$window.trigger('scroll');
-	
+	*/
 });
+
+
+
+
+
+	/*** Google analytics ***/
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85514586-1', 'auto');
+  ga('send', 'pageview');
